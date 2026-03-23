@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "principals": {
+    "82294876-ba0d-487a-bece-f5edbd9d6695": {
+      "id": "82294876-ba0d-487a-bece-f5edbd9d6695",
+      "name": "Principal 1",
+      "keyHash": "b682d867fb6fa7f766fc48f08d6b6a1d2f5689fafa946c2640da003b976144c3",
+      "createdAt": "2026-03-08T11:54:20.876Z"
+    },
+    "d81456e8-a832-4fa7-944c-5fd052732d41": {
+      "id": "d81456e8-a832-4fa7-944c-5fd052732d41",
+      "name": "Joan Principal",
+      "keyHash": "4110efbb0ee30c9ae13e3bba656c6d517ec3e94d1b29d8e0dc4263be08f07559",
+      "createdAt": "2026-03-08T22:02:18.216Z"
+    }
+  },
+  "competitions": {
+    "7e0cc62e-5023-460a-b425-5e15929fd792": {
+      "id": "7e0cc62e-5023-460a-b425-5e15929fd792",
+      "code": "DKYVYS",
+      "name": "Comp 1",
+      "status": "open",
+      "createdAt": "2026-03-08T11:54:20.915Z",
+      "createdByPrincipalId": "82294876-ba0d-487a-bece-f5edbd9d6695",
+      "joinTokens": {
+        "referee": "3c8875dae1cd40f9bdcb",
+        "table": "33cd5090ec064062b731"
+      }
+    },
+    "0eec28e7-a9c1-4677-83ce-077c1986567a": {
+      "id": "0eec28e7-a9c1-4677-83ce-077c1986567a",
+      "code": "MJAZGL",
+      "name": "Comp Test",
+      "status": "open",
+      "createdAt": "2026-03-08T22:02:22.040Z",
+      "createdByPrincipalId": "d81456e8-a832-4fa7-944c-5fd052732d41",
+      "joinTokens": {
+        "principal": "96ddf01478e244f0b3e7",
+        "referee": "86e0d26972024be0920b",
+        "table": "d5584bfc71354c69bdd5"
+      }
+    }
+  },
+  "actors": {
+    "21247b5e-fd4e-4670-bc6d-c791271465c6": {
+      "id": "21247b5e-fd4e-4670-bc6d-c791271465c6",
+      "competitionId": "7e0cc62e-5023-460a-b425-5e15929fd792",
+      "name": "Taula 1",
+      "role": "table",
+      "joinedAt": "2026-03-08T11:54:20.920Z"
+    },
+    "1571dc88-be76-4d01-9c0b-8119bcf7dda7": {
+      "id": "1571dc88-be76-4d01-9c0b-8119bcf7dda7",
+      "competitionId": "0eec28e7-a9c1-4677-83ce-077c1986567a",
+      "name": "Joan Principal",
+      "role": "principal",
+      "joinedAt": "2026-03-08T22:02:28.026Z"
+    }
+  },
+  "events": {
+    "7e0cc62e-5023-460a-b425-5e15929fd792": [
+      {
+        "id": "1234567890abcdef",
+        "competitionId": "7e0cc62e-5023-460a-b425-5e15929fd792",
+        "actorId": "21247b5e-fd4e-4670-bc6d-c791271465c6",
+        "actorName": "Taula 1",
+        "actorRole": "table",
+        "bib": 12,
+        "faultCode": "T1",
+        "faultText": "Prova text",
+        "color": "G",
+        "category": "T",
+        "capturedAt": "2026-03-08T12:00:00Z",
+        "receivedAt": "2026-03-08T11:54:20.930Z"
+      }
+    ],
+    "0eec28e7-a9c1-4677-83ce-077c1986567a": []
+  },
+  "checks": {},
+  "penaltyCompletions": {},
+  "status": {
+    "7e0cc62e-5023-460a-b425-5e15929fd792": {
+      "21247b5e-fd4e-4670-bc6d-c791271465c6": {
+        "lastSeenAt": "2026-03-08T11:54:20.933Z",
+        "pendingCount": 0
+      }
+    },
+    "0eec28e7-a9c1-4677-83ce-077c1986567a": {
+      "1571dc88-be76-4d01-9c0b-8119bcf7dda7": {
+        "lastSeenAt": "2026-03-08T22:02:28.026Z",
+        "pendingCount": 0
+      }
+    }
+  }
+}

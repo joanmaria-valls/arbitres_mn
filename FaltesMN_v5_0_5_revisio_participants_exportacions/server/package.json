@@ -1,0 +1,19 @@
+{
+  "name": "faltesmn-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node -r dotenv/config index.mjs",
+    "start": "node -r dotenv/config index.mjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "nanoid": "^5.1.5",
+    "ws": "^8.18.3",
+    "zod": "^4.3.6",
+    "dotenv": "^16.4.5"
+  }
+}
