@@ -1,0 +1,10 @@
+Correcció de la versió v4.1 mm:ss lleugera
+
+S'ha corregit un error de port en local:
+- el servidor local estava pensat per defecte al PORT del server/.env (habitualment 8787)
+- el client Vite feia proxy per defecte a http://localhost:10000
+
+Ara:
+- arrenca-client.sh llegeix server/.env i exporta VITE_API_BASE segons PORT
+- vite.config.ts té fallback local a 8787
+- arrenca_faltesmn_v4.sh també tanca el port 10000 si havia quedat ocupat
