@@ -1,0 +1,40 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #1f2937;
+  background-color: #e8f5e9;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  color-scheme: light;
+  margin: 0;
+  min-width: 320px;
+  background: #e8f5e9;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+}

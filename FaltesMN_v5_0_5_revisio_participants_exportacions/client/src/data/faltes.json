@@ -1,0 +1,474 @@
+[
+  {
+    "id": "B1",
+    "c": "B",
+    "t": "T",
+    "desc": "Falta de balanceig altern de EESS des de les espatlles",
+    "k": [
+      "balanceig",
+      "altern",
+      "espatlles",
+      "brac",
+      "bracos",
+      "alternat",
+      "extremitats",
+      "superiors"
+    ]
+  },
+  {
+    "id": "B2",
+    "c": "B",
+    "t": "T",
+    "desc": "No passa colzes/mans per la línia axil·lar mitja respectivament",
+    "k": [
+      "colzes",
+      "mans",
+      "ma",
+      "axilar",
+      "linia",
+      "mitja",
+      "colze"
+    ]
+  },
+  {
+    "id": "B3",
+    "c": "B",
+    "t": "T",
+    "desc": "El bastó entra en contacte amb el terra després de l'impuls del peu de darrere",
+    "k": [
+      "basto",
+      "pastor",
+      "contacte",
+      "terra",
+      "impuls",
+      "despres",
+      "tard"
+    ]
+  },
+  {
+    "id": "B4",
+    "c": "B",
+    "t": "T",
+    "desc": "Recolzament del bastó no diagonal, o no manté la diagonal en tot moment",
+    "k": [
+      "recolzament",
+      "diagonal",
+      "basto",
+      "vertical"
+    ]
+  },
+  {
+    "id": "B5",
+    "c": "B",
+    "t": "T",
+    "desc": "No recolza el bastó per darrere del peu de davant",
+    "k": [
+      "recolza",
+      "basto",
+      "darrere",
+      "peu",
+      "davant"
+    ]
+  },
+  {
+    "id": "G1",
+    "c": "G",
+    "t": "T",
+    "desc": "Pèrdua de contacte dels peus a terra per fase aèria o baixada del centre de gravetat",
+    "k": [
+      "perdua",
+      "contacte",
+      "fase",
+      "aeria",
+      "vol",
+      "saltar"
+    ]
+  },
+  {
+    "id": "G2",
+    "c": "G",
+    "t": "T",
+    "desc": "No talona: el peu entra per la punta amb el cos inclinat endavant",
+    "k": [
+      "talona",
+      "talo",
+      "punta",
+      "puntera",
+      "inclinat",
+      "endavant"
+    ]
+  },
+  {
+    "id": "G3",
+    "c": "G",
+    "t": "T",
+    "desc": "Entrar de taló amb genoll en hiperextensió i mantenir-lo en la fase de recolzament (marxa atlètica)",
+    "k": [
+      "talo",
+      "genoll",
+      "hiperextensio",
+      "recolzament",
+      "atletica",
+      "extensio"
+    ]
+  },
+  {
+    "id": "V2",
+    "c": "V",
+    "t": "T",
+    "desc": "Córrer",
+    "k": [
+      "correr",
+      "trotar",
+      "trota"
+    ]
+  },
+  {
+    "id": "B6",
+    "c": "B",
+    "t": "R",
+    "desc": "Anticipar-se al senyal de sortida",
+    "k": [
+      "anticipar",
+      "sortida",
+      "senyal",
+      "abans"
+    ]
+  },
+  {
+    "id": "B7",
+    "c": "B",
+    "t": "R",
+    "desc": "Dorsal no visible",
+    "k": [
+      "dorsal",
+      "visible",
+      "tapat",
+      "doblegat",
+      "girat",
+      "ocult"
+    ]
+  },
+  {
+    "id": "B8",
+    "c": "B",
+    "t": "R",
+    "desc": "Alliberar dragoneres fora de les zones permeses",
+    "k": [
+      "dragonera",
+      "dragoneres",
+      "alliberar",
+      "desenganxar"
+    ]
+  },
+  {
+    "id": "B9",
+    "c": "B",
+    "t": "R",
+    "desc": "No detenir-se per avituallament o material quan pertoca",
+    "k": [
+      "avituallament",
+      "habitualment",
+      "aturar",
+      "aturada",
+      "parada",
+      "detenir",
+      "material"
+    ]
+  },
+  {
+    "id": "G5",
+    "c": "G",
+    "t": "R",
+    "desc": "Reomplir fora de la zona permesa per l'organització",
+    "k": [
+      "reomplir",
+      "omplir",
+      "bido",
+      "ampolla",
+      "flasco",
+      "beure",
+      "veure"
+    ]
+  },
+  {
+    "id": "G7",
+    "c": "G",
+    "t": "R",
+    "desc": "Incompliment de la normativa de tacs de goma (pads)",
+    "k": [
+      "pads",
+      "pad",
+      "pats",
+      "pat",
+      "tacs",
+      "goma",
+      "gomes",
+      "gomas"
+    ]
+  },
+  {
+    "id": "V1",
+    "c": "V",
+    "t": "R",
+    "desc": "Tercera targeta groga",
+    "k": [
+      "tercera",
+      "targeta",
+      "groga"
+    ]
+  },
+  {
+    "id": "V3",
+    "c": "V",
+    "t": "R",
+    "desc": "Retallar itinerari, ni que sigui de forma involuntària",
+    "k": [
+      "retallar",
+      "drecera",
+      "escurcar",
+      "itinerari",
+      "recorregut"
+    ]
+  },
+  {
+    "id": "V4",
+    "c": "V",
+    "t": "R",
+    "desc": "Portar auriculars a la competició",
+    "k": [
+      "auriculars",
+      "musica"
+    ]
+  },
+  {
+    "id": "V5",
+    "c": "V",
+    "t": "R",
+    "desc": "No dur el material obligatori per reglament o el requerit per l'organització",
+    "k": [
+      "material",
+      "obligatori",
+      "equipament",
+      "requerit",
+      "manca"
+    ]
+  },
+  {
+    "id": "V7",
+    "c": "V",
+    "t": "R",
+    "desc": "Manipular o modificar el dorsal, o refusar portar-lo",
+    "k": [
+      "dorsal",
+      "manipular",
+      "modificar",
+      "alterar",
+      "refusar"
+    ]
+  },
+  {
+    "id": "V8",
+    "c": "V",
+    "t": "R",
+    "desc": "No passar el control de sortida, un control de pas o la zona de penalització quan s'indiqui",
+    "k": [
+      "control",
+      "pas",
+      "sortida",
+      "penalitzacio",
+      "desobeir"
+    ]
+  },
+  {
+    "id": "V9",
+    "c": "V",
+    "t": "R",
+    "desc": "Endarrerir voluntàriament l'hora d'inici de la competició",
+    "k": [
+      "endarrerir",
+      "retardar",
+      "inici",
+      "tard",
+      "voluntariament"
+    ]
+  },
+  {
+    "id": "V10",
+    "c": "V",
+    "t": "R",
+    "desc": "Utilitzar qualsevol mitjà de transport durant la competició",
+    "k": [
+      "transport",
+      "vehicle",
+      "bicicleta",
+      "cotxe",
+      "patinet"
+    ]
+  },
+  {
+    "id": "V11",
+    "c": "V",
+    "t": "R",
+    "desc": "Rebre ajuda externa indeguda fora de la zona determinada",
+    "k": [
+      "ajuda",
+      "externa",
+      "assistencia",
+      "acompanyant",
+      "indeguda"
+    ]
+  },
+  {
+    "id": "V12",
+    "c": "V",
+    "t": "R",
+    "desc": "Treure o canviar marques del recorregut",
+    "k": [
+      "treure",
+      "canviar",
+      "marques",
+      "recorregut"
+    ]
+  },
+  {
+    "id": "V19",
+    "c": "V",
+    "t": "R",
+    "desc": "No detenir-se si es trenca el bastó",
+    "k": [
+      "trenca",
+      "trencat",
+      "basto",
+      "aturar"
+    ]
+  },
+  {
+    "id": "V20",
+    "c": "V",
+    "t": "R",
+    "desc": "Pujar al podi amb qualsevol bandera o símbol no autoritzat",
+    "k": [
+      "podi",
+      "bandera",
+      "simbol",
+      "autoritzat"
+    ]
+  },
+  {
+    "id": "G4",
+    "c": "G",
+    "t": "C",
+    "desc": "Bloquejar o obstaculitzar el pas d'un adversari",
+    "k": [
+      "bloquejar",
+      "obstaculitzar",
+      "obstruir",
+      "barrar",
+      "pas"
+    ]
+  },
+  {
+    "id": "G6",
+    "c": "G",
+    "t": "C",
+    "desc": "Protestar a l'equip arbitral",
+    "k": [
+      "protestar",
+      "protesta",
+      "cridar",
+      "discutir",
+      "arbitral"
+    ]
+  },
+  {
+    "id": "V6",
+    "c": "V",
+    "t": "C",
+    "desc": "No fer cas a indicacions dels àrbitres o de l'organització",
+    "k": [
+      "desobeir",
+      "indicacions",
+      "arbitres",
+      "organitzacio",
+      "ordre",
+      "desatendre"
+    ]
+  },
+  {
+    "id": "V13",
+    "c": "V",
+    "t": "C",
+    "desc": "Faltar al respecte a normes, persones o natura",
+    "k": [
+      "respecte",
+      "normes",
+      "natura",
+      "entorn",
+      "senyalitzacio"
+    ]
+  },
+  {
+    "id": "V14",
+    "c": "V",
+    "t": "C",
+    "desc": "Faltar al respecte a persones, equips o autoritats",
+    "k": [
+      "respecte",
+      "persones",
+      "equips",
+      "autoritats",
+      "insults",
+      "insultar"
+    ]
+  },
+  {
+    "id": "V15",
+    "c": "V",
+    "t": "C",
+    "desc": "Provocar un accident de forma voluntària",
+    "k": [
+      "provocar",
+      "accident",
+      "voluntaria",
+      "intencionat"
+    ]
+  },
+  {
+    "id": "V16",
+    "c": "V",
+    "t": "C",
+    "desc": "Prendre alcohol o fumar durant la competició",
+    "k": [
+      "alcohol",
+      "fumar",
+      "tabac"
+    ]
+  },
+  {
+    "id": "V17",
+    "c": "V",
+    "t": "C",
+    "desc": "Llençar deixalles fora dels contenidors",
+    "k": [
+      "llencar",
+      "deixalles",
+      "contenidors",
+      "brossa"
+    ]
+  },
+  {
+    "id": "V18",
+    "c": "V",
+    "t": "C",
+    "desc": "Ometre auxili a una persona accidentada",
+    "k": [
+      "ometre",
+      "auxili",
+      "socors",
+      "assistir",
+      "accidentada",
+      "atendre"
+    ]
+  }
+]

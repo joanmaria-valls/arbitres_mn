@@ -1,0 +1,18 @@
+#root { min-height: 100vh; }
+@keyframes expelled-pulse { 0% { opacity: 1; } 50% { opacity: 0.72; } 100% { opacity: 1; } }
+.alert-expelled-pulse { animation: expelled-pulse 0.7s linear infinite; }
+.dash-header { display: grid; gap: 10px; }
+.dash-header-top { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; align-items: start; }
+.dash-header-main { min-width: 0; display: grid; gap: 6px; }
+.dash-title { font-weight: 900; font-size: 20px; }
+.dash-meta-row { display: flex; gap: 8px; flex-wrap: nowrap; align-items: center; overflow-x: auto; padding-bottom: 2px; -webkit-overflow-scrolling: touch; }
+.dash-meta-pill { flex: 0 0 auto; display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px; background: #f3f4f6; font-size: 13px; font-weight: 700; color: #111827; white-space: nowrap; }
+.dash-meta-pill--primary, .dash-meta-pill--secondary { max-width: min(48vw, 420px); overflow: hidden; text-overflow: ellipsis; }
+.dash-meta-sep { flex: 0 0 auto; font-weight: 900; color: #4b5563; }
+.dash-header-top-actions { display: grid; gap: 8px; }
+.dash-status-row, .dash-button-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.dash-status-row { justify-content: flex-end; }
+.dash-button-row { justify-content: flex-start; }
+.dash-button-row > button, .dash-button-row > div > button { justify-content: center; padding: 10px 12px; }
+@media (min-width: 721px) { .dash-header-top { grid-template-columns: minmax(0, 1fr) auto; align-items: start; } .dash-header-top-actions { display: grid; gap: 8px; justify-self: end; align-self: start; } .dash-status-row, .dash-button-row { flex-wrap: nowrap; justify-content: flex-end; } .dash-header--control .dash-button-row { justify-content: flex-end; } }
+@media (max-width: 720px) { .dash-title { font-size: 18px; } .dash-header-top { grid-template-columns: minmax(0, 1fr); } .dash-header-top-actions, .dash-status-row, .dash-button-row { justify-items: start; justify-content: flex-start; } .dash-status-row, .dash-button-row { gap: 6px; } .dash-meta-pill { font-size: 12px; padding: 5px 8px; } .dash-meta-pill--primary, .dash-meta-pill--secondary { max-width: 44vw; } }

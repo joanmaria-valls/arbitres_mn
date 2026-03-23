@@ -1,0 +1,267 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+export type VoskEvents = {
+  onPartial?: (text: string) => void
+  onResult?: (text: string) => void
+  onError?: (msg: string) => void
+  onLoad?: (engine?: 'native' | 'vosk') => void
+}
+
+type StartOptions = {
+  lang?: string
+  hints?: string[]
+}
+
+declare global {
+  interface Window {
+    webkitSpeechRecognition?: any
+    SpeechRecognition?: any
+    SpeechRecognitionPhrase?: any
+  }
+}
+
+export class VoskController {
+  private model: any | null = null
+  private recognizer: any | null = null
+  private audioContext: AudioContext | null = null
+  private source: MediaStreamAudioSourceNode | null = null
+  private processor: ScriptProcessorNode | null = null
+  private mediaStream: MediaStream | null = null
+  private nativeRecognition: any | null = null
+  private restartTimer: number | null = null
+  private isRunning = false
+  private engine: 'native' | 'vosk' | null = null
+  private nativeRetryWithoutHintsDone = false
+  private suppressNativeRestart = false
+  private nativeInternalTransition = false
+
+  getEngine() {
+    return this.engine
+  }
+
+  async start(modelUrl: string, events: VoskEvents, options: StartOptions = {}) {
+    if (this.isRunning) return
+    this.isRunning = true
+    this.nativeRetryWithoutHintsDone = false
+    this.suppressNativeRestart = false
+
+    try {
+      const nativeCtor = window.SpeechRecognition || window.webkitSpeechRecognition
+      if (nativeCtor) {
+        await this.startNative(modelUrl, nativeCtor, events, options, true)
+        return
+      }
+
+      await this.startVosk(modelUrl, events)
+    } catch (err: any) {
+      this.isRunning = false
+      events.onError?.(String(err?.message || err))
+    }
+  }
+
+  private async startNative(modelUrl: string, nativeCtor: any, events: VoskEvents, options: StartOptions, allowPhraseHints: boolean) {
+    this.engine = 'native'
+
+    const rec = new nativeCtor()
+    this.nativeRecognition = rec
+    rec.lang = options.lang || 'ca-ES'
+    rec.continuous = true
+    rec.interimResults = true
+    rec.maxAlternatives = 3
+
+    if (allowPhraseHints) {
+      try {
+        if (Array.isArray(options.hints) && options.hints.length && 'phrases' in rec && window.SpeechRecognitionPhrase) {
+          const hints = options.hints
+            .map((phrase) => String(phrase || '').trim())
+            .filter(Boolean)
+            .slice(0, 96)
+            .map((phrase) => new (window.SpeechRecognitionPhrase!)(phrase, 5.0))
+          if (hints.length) rec.phrases = hints
+        }
+      } catch {
+        // ignore phrase hinting if unsupported
+      }
+    }
+
+    rec.onstart = () => events.onLoad?.('native')
+    rec.onresult = (ev: any) => {
+      let finals: string[] = []
+      let interim = ''
+      for (let i = ev.resultIndex || 0; i < ev.results.length; i++) {
+        const result = ev.results[i]
+        const transcript = String(result?.[0]?.transcript || '').trim()
+        if (!transcript) continue
+        if (result.isFinal) finals.push(transcript)
+        else interim = transcript
+      }
+      if (interim) events.onPartial?.(interim)
+      if (finals.length) events.onResult?.(finals.join(' ').trim())
+    }
+    rec.onerror = async (ev: any) => {
+      const err = String(ev?.error || ev?.message || 'Error de reconeixement de veu')
+      if (err === 'aborted' && (this.nativeInternalTransition || !this.isRunning)) return
+      if (!this.isRunning) return
+
+      if (err === 'phrases-not-supported' && allowPhraseHints && !this.nativeRetryWithoutHintsDone) {
+        this.nativeRetryWithoutHintsDone = true
+        this.suppressNativeRestart = true
+        this.nativeInternalTransition = true
+        try {
+          rec.abort?.()
+          rec.stop?.()
+        } catch {
+          // ignore
+        }
+        this.nativeRecognition = null
+        try {
+          await this.startNative(modelUrl, nativeCtor, events, { ...options, hints: [] }, false)
+          this.nativeInternalTransition = false
+          return
+        } catch (retryErr: any) {
+          this.nativeInternalTransition = false
+          events.onError?.(`Reconeixement del navegador sense frases no disponible: ${String(retryErr?.message || retryErr)}`)
+        }
+      }
+
+      if (err === 'language-not-supported' || err === 'service-not-allowed' || err === 'not-allowed') {
+        this.suppressNativeRestart = true
+        try {
+          rec.abort?.()
+          rec.stop?.()
+        } catch {
+          // ignore
+        }
+        this.nativeRecognition = null
+        try {
+          await this.startVosk(modelUrl, events)
+          return
+        } catch (voskErr: any) {
+          events.onError?.(`Reconeixement del navegador: ${err}. VOSK també ha fallat: ${String(voskErr?.message || voskErr)}`)
+          this.stop()
+          return
+        }
+      }
+
+      if (err === 'no-speech' || err === 'network') {
+        events.onError?.(`Reconeixement del navegador: ${err}`)
+        return
+      }
+
+      events.onError?.(`Reconeixement del navegador: ${err}`)
+      this.stop()
+    }
+    rec.onend = () => {
+      if (this.suppressNativeRestart) {
+        this.suppressNativeRestart = false
+      this.nativeInternalTransition = false
+        return
+      }
+      if (!this.isRunning) return
+      this.restartTimer = window.setTimeout(() => {
+        if (!this.isRunning || !this.nativeRecognition) return
+        try {
+          this.nativeRecognition.start()
+        } catch {
+          // ignore transient restarts
+        }
+      }, 180)
+    }
+
+    rec.start()
+  }
+
+  private async startVosk(modelUrl: string, events: VoskEvents) {
+    this.engine = 'vosk'
+
+    if (!navigator.mediaDevices?.getUserMedia) {
+      throw new Error('Aquest navegador no exposa getUserMedia per al micròfon.')
+    }
+
+    const recognizerSampleRate = 16000
+
+    // Demana primer el permís del micròfon perquè navegadors com Firefox no retardin
+    // la finestra de permisos fins després de carregar el model.
+    this.mediaStream = await navigator.mediaDevices.getUserMedia({
+      video: false,
+      audio: {
+        echoCancellation: true,
+        noiseSuppression: true,
+        autoGainControl: true,
+        channelCount: { ideal: 1 },
+        sampleRate: { ideal: recognizerSampleRate },
+        sampleSize: { ideal: 16 }
+      }
+    })
+
+    const mod = await import('vosk-browser')
+    const Vosk: any = (mod as any).default ?? mod
+
+    if (!this.model) {
+      this.model = await Vosk.createModel(modelUrl)
+      events.onLoad?.('vosk')
+    } else {
+      events.onLoad?.('vosk')
+    }
+
+    this.recognizer = new this.model.KaldiRecognizer(recognizerSampleRate)
+
+    this.recognizer.on('partialresult', (m: any) => {
+      const text = m?.result?.partial || ''
+      if (text) events.onPartial?.(text)
+    })
+
+    this.recognizer.on('result', (m: any) => {
+      const text = m?.result?.text || ''
+      if (text) events.onResult?.(text)
+    })
+
+    this.audioContext = new AudioContext({ sampleRate: recognizerSampleRate })
+    if (this.audioContext.state === 'suspended') {
+      await this.audioContext.resume()
+    }
+
+    this.source = this.audioContext.createMediaStreamSource(this.mediaStream)
+    this.processor = this.audioContext.createScriptProcessor(4096, 1, 1)
+    this.processor.onaudioprocess = (ev) => {
+      try {
+        this.recognizer?.acceptWaveform(ev.inputBuffer)
+      } catch (err: any) {
+        events.onError?.(`VOSK local: ${String(err?.message || err)}`)
+      }
+    }
+
+    this.source.connect(this.processor)
+    this.processor.connect(this.audioContext.destination)
+  }
+
+  stop() {
+    this.isRunning = false
+    try {
+      if (this.restartTimer) {
+        window.clearTimeout(this.restartTimer)
+        this.restartTimer = null
+      }
+      this.nativeRecognition?.abort?.()
+      this.nativeRecognition?.stop?.()
+      this.processor?.disconnect()
+      this.source?.disconnect()
+      this.mediaStream?.getTracks().forEach((t) => t.stop())
+      this.audioContext?.close()
+      this.recognizer?.remove?.()
+    } catch {
+      // ignore
+    } finally {
+      this.processor = null
+      this.source = null
+      this.mediaStream = null
+      this.audioContext = null
+      this.recognizer = null
+      this.nativeRecognition = null
+      this.engine = null
+      this.nativeRetryWithoutHintsDone = false
+      this.suppressNativeRestart = false
+      this.nativeInternalTransition = false
+    }
+  }
+}
