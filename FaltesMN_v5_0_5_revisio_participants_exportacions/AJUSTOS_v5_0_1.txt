@@ -1,0 +1,27 @@
+FaltesMN v5.0.1
+================
+
+Retocs sobre v5.0.0:
+
+1) Exportacions
+- El botó vermell "GRAVAR TOTS ELS LLISTATS" s'integra dins la graella, ocupant les cel·les buides sota les columnes centrals.
+- El flux d'exportació canvia: abans de generar un llistat, l'app pregunta si es vol "Només veure" o "Veure i gravar".
+- S'elimina la duplicació funcional entre "Tancar" i "No, només mirar".
+- El botó "JSON local" surt d'Exportacions i passa a Manteniment.
+
+2) Participants
+- Cognoms i nom es converteixen a MAJÚSCULES automàticament.
+- Ja no es desa a cada canvi dins del mateix participant: la desada principal es fa en arribar a Categoria, en marcar NP o en completar un Temps brut vàlid.
+- El camp Temps brut valida minuts i segons reals (hh:mm:ss:dd) i evita minuts/segons impossibles.
+- Al camp Temps brut, amb 8 dígits vàlids, les fletxes amunt/esquerra van al dorsal de dalt i les avall/dreta al de baix.
+- A Gènere i Categoria, les fletxes esquerra/dreta mouen el focus entre cel·les; amunt/avall continuen reservades per canviar l'opció del selector.
+
+3) Manteniment
+- El títol passa a "Manteniment tècnic".
+- S'afegeix el botó "Descarrega JSON local" dins Manteniment.
+
+4) Avisos sonors
+- Nous sons més forts i més tipus sirena per a grogues i vermelles als perfils de Taula i Principal.
+
+Nota tècnica:
+- La verificació completa amb "npm run build" continua caient pel problema preexistent de definicions de tipus (vite/client i node) del paquet base rebut.

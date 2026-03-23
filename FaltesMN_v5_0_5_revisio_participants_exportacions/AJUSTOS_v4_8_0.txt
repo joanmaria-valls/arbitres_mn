@@ -1,0 +1,50 @@
+AJUSTOS v4_8_0
+================
+
+Novetats principals
+-------------------
+1) Perfil TAULA / CONTROL COMPETICIÓ
+- Nova pestanya «Participants» abans d’«Exporta».
+- Graella fixa de dorsals 1 a 500.
+- Camps editables per fila:
+  * Cognoms i nom
+  * Gènere (M / F / ⚧)
+  * Categoria
+  * Temps brut (hh:mm:ss:dd)
+  * Penalització (mm:ss)
+  * Bonificació (mm:ss)
+  * Temps net calculat automàticament
+- Capçalera fixa mentre es desplaça la graella.
+- Botó «Torna al control» sempre visible dins la pantalla.
+
+2) Persistència real al servidor
+- Les dades de participants es guarden a server/data.json a través del servidor.
+- Es mantenen mentre la competició segueix oberta.
+- Sincronització en directe entre TAULA i PRINCIPAL.
+
+3) Exportacions
+- Nova maquetació en 7 columnes.
+- Bloc «ARBITRATGE» amb:
+  * JSON local
+  * PDF meu
+  * PDF global
+  * PDF dorsals
+- Bloc «CLASSIFICACIONS» amb botons per general i per categories/gènere.
+- Les classificacions surten en PDF ordenades per temps net.
+
+Fitxers tocats
+--------------
+- client/src/pages/Dashboard.tsx
+- client/src/lib/participants.ts
+- client/src/lib/pdf.ts
+- client/src/lib/api.ts
+- client/src/lib/useCompetition.ts
+- client/src/components/ui.tsx
+- client/src/types.ts
+- server/index.mjs
+- server/lib/store.mjs
+- server/lib/types.mjs
+
+Observació
+----------
+En aquest entorn no s’han pogut instal·lar les dependències npm del projecte, de manera que no s’ha pogut fer una compilació completa final amb Vite/TypeScript. Sí que s’han comprovat la sintaxi TypeScript/TSX dels fitxers modificats i la sintaxi Node del servidor.

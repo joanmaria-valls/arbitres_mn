@@ -1,0 +1,26 @@
+Versió 4_8_1
+
+Correccions respecte de la 4_8:
+
+1) Participants
+- Corregit el comportament dels camps de “Cognoms i nom”, “Gènere” i “Categoria”, que podien quedar trepitjats per la resincronització amb el servidor.
+- Ara el nom no es reescriu mentre s'està teclejant; la normalització es fa en desar.
+- La validació dels temps ja no mostra avisos mentre s'escriu: l'avís surt en sortir del camp si el format és incorrecte.
+
+2) Penalitzacions i bonificacions automàtiques
+- A la pantalla Participants, el temps net ja té en compte les penalitzacions automàtiques derivades de targetes grogues no complertes.
+- També es mostren, sota els camps de penalització/bonificació, els valors automàtics calculats per l'app quan n'hi ha.
+- El temps net també té en compte les bonificacions automàtiques d'auxili registrades amb targeta verda.
+
+3) Classificacions
+- Les classificacions en PDF ja incorporen les penalitzacions automàtiques i les bonificacions automàtiques.
+- Els dorsals expulsats (vermella o equivalent) ja no surten a les classificacions normals.
+- Afegits dos nous llistats PDF: EXPULSATS i NO PRESENTATS.
+- El llistat NO PRESENTATS treu només dorsal i nom.
+
+4) Botons d'exportació
+- Millorada la visualització dels símbols de gènere als botons perquè es vegin més grossos.
+
+Validació tècnica:
+- Client compilat correctament amb npm run build.
+- Servidor comprovat amb node --check.

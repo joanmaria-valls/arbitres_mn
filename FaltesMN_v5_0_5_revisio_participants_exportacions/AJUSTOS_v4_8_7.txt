@@ -1,0 +1,8 @@
+Versió 4_8_7
+
+Ajustos respecte de la 4_8_6:
+- El botó d'exportació de la feina dels àrbitres de recorregut queda més explícit com a «PDF per àrbitre».
+- Aquesta exportació continua generant un PDF separat per a cada àrbitre de recorregut.
+- Els símbols de gènere dels botons de classificació (masculí i femení) s'han fet una mica més grans.
+- El símbol de no binari es manté igual.
+- Es mantenen les mateixes mides d'alçada i amplada dels botons.

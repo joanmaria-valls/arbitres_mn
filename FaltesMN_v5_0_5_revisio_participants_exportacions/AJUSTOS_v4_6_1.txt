@@ -1,0 +1,3 @@
+Retoc v4.6.1
+- Botons superiors Inf., Refresca i Sortir amb la mida natural dels botons de navegació
+- Sense amplada mínima forçada, per igualar-los millor amb Arbitrar / Catàleg / Registre

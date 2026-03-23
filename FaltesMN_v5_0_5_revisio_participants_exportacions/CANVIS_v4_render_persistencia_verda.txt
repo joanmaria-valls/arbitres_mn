@@ -1,0 +1,36 @@
+VERSIÓ 4 - canvis principals
+
+1) PERSISTÈNCIA LOCAL MÉS ROBUSTA
+- Cada dispositiu desa una còpia local completa de la competició (events, checks, penalitzacions i estat).
+- Si el servidor no respon temporalment, l'app intenta mostrar la còpia local guardada.
+- La cua d'enviament offline continua activa.
+- Si el servidor perd la sessió, l'app intenta reentrar automàticament a la competició amb el codi/token guardats.
+
+2) EXPORTACIÓ DE SEGURETAT
+- Nova opció "Exporta còpia JSON local" a la pestanya Exporta.
+- Aquesta còpia JSON és més fiable que intentar generar PDFs automàtics en segon pla, perquè el navegador no permet desar PDFs periòdics silenciosament de forma robusta a tots els dispositius.
+- Els PDFs continuen disponibles i ara inclouen també les targetes verdes/auxilis.
+
+3) TARGETA VERDA / AUXILI
+- Des de "Arbitrar" hi ha botó manual "Targeta verda / auxili".
+- Per veu, s'ha previst la detecció de "atenció verda" / "auxili".
+- Demana: dorsal auxiliador, temps a descomptar i dorsal auxiliat.
+- Taula i Principal reben un banner verd persistent fins marcar-lo com a vist.
+- Al resum per dorsals surt el recompte de verdes i el temps total a descomptar.
+
+4) PANTALLA DESPERTA
+- Quan s'està a la pestanya "Arbitrar" amb competició oberta, la PWA prova de mantenir la pantalla activa mitjançant Wake Lock (si el navegador/dispositiu ho admet i hi ha context segur HTTPS).
+
+5) RENDER / DESPLEGAMENT
+- Server ajustat per Render: host 0.0.0.0 i port process.env.PORT (10000 per defecte local).
+- Vite ajustat perquè el build de la PWA no falli pel fitxer gran de Vosk.
+
+6) JA EXISTIA BOTÓ DE TANCAMENT
+- El perfil principal ja tenia acció per tancar la competició. Si no la veies, probablement era perquè la recordaves des del dashboard d'actor i no des de la pàgina de gestió del principal.
+
+LIMITACIÓ IMPORTANT
+- Aquesta versió protegeix molt millor la feina feta al dispositiu.
+- Però si el servidor perd completament les dades de la competició, la recuperació total dependrà de la còpia local exportada/guardada en algun dels dispositius.
+- Per això és recomanable que Taula o Principal exportin JSON al final de la sessió o abans d'una demostració/competició important.
+
+- Ajust del formulari de targeta verda: el temps d’auxili ara es demana en un únic camp amb format mm:ss.

@@ -1,0 +1,28 @@
+Versió 4_8_2
+
+Ajustos incorporats respecte de la 4_8_1:
+
+1) Participants
+- El camp «Cognoms i nom» ja no normalitza espais de forma agressiva mentre s'escriu.
+- El desament de «Gènere» i «Categoria» ja no queda bloquejat si en aquella mateixa fila hi ha un temps parcial o invàlid en un altre camp.
+- «Cognoms i nom», «Gènere» i «Categoria» es desen en sortir del camp.
+- Els camps de temps continuen amb desament diferit mentre s'escriu i validació en sortir del camp.
+- La fila de participants s'ha optimitzat per reduir repintats innecessaris i fer l'edició més fluida.
+
+2) Penalitzacions i bonificacions
+- La penalització efectiva i la bonificació efectiva es mostren dins la pròpia casella, no sota en lletra petita.
+- Les penalitzacions efectives es mostren en vermell.
+- Les bonificacions efectives es mostren en verd.
+- En entrar dins la casella, es mostra el valor editable propi del camp; en sortir-ne, es torna a veure el valor efectiu.
+
+3) Temps net
+- Revisat el càlcul del temps net.
+- Exemple comprovat: 01:15:03:00 + 06:00 - 03:12 = 01:17:51:00.
+
+4) Exportacions
+- Augmentada la mida dels símbols de gènere als botons (masculí/femení).
+- Als PDFs de classificació, la columna de penalització surt en vermell i la de bonificació en verd quan tenen valor.
+
+Validació feta en aquest entorn:
+- Sintaxi del servidor verificada amb Node.
+- El client no s'ha pogut compilar completament aquí perquè en aquesta còpia del projecte falten dependències de desenvolupament del front.

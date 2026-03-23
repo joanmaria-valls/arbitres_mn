@@ -1,0 +1,13 @@
+FaltesMN v5.0.5
+
+Retocs principals:
+- Participants: menys gravacions duplicades; Tab des de Categoria cap al següent participant; Temps brut amb navegació vertical també amb Tab; botons sensibles fora del recorregut de tabulació.
+- Exportacions: millor encaix visual; “PDF cronològic”; classificacions amb expulsats/retirats/no presentats; gravació massiva també genera classificacions buides amb missatge.
+- Llistats PDF: data i hora de generació amb format llegible; llistats d’expulsats/retirats/no presentats sense número d’ordre.
+- Entrades: la descripció ja no repeteix el codi de la falta ni el mot “dorsal” a l’abandó.
+- Manteniment: text més clar per a la versió interna de dades.
+- Benvinguda: ajust més compacte per a mòbil.
+- Veu: reforç de lectura amb reintent curt en selecció de falta.
+
+Nota:
+- El comportament exacte del Firefox al Xiaomi continua requerint prova real al dispositiu.

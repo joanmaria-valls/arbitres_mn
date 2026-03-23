@@ -1,0 +1,11 @@
+FaltesMN v5.0.2 (pre-demo FEEC)
+
+Canvis principals:
+- Benvinguda contextual per accessos per QR/enllaç amb nom de competició.
+- Correcció del flux d'assignació de faltes: la selecció obre directament el modal de dorsal.
+- Eliminada la targeta duplicada al peu de pantalla en Arbitrar/Catàleg.
+- Neteja del dorsal residual després de verda/lila o cancel·lacions.
+- Exportacions: un sol botó "Tanca" a la finestra de veure/gravar.
+- Participants: exportació/importació JSON de dorsal, nom, gènere i categoria.
+- Manteniment: etiquetes més clares de versió interna de dades.
+- Mostra del nom de la competició en més pantalles on abans predominava només el codi.

@@ -1,0 +1,6 @@
+Ajustos v4.7.4
+
+- RECORREGUT: els botons Inf. / Refresca / Sortir pugen a la capçalera superior, com al Principal i Taula, per guanyar espai i coherència visual.
+- RECORREGUT: s'elimina l'amplada mínima forçada dels botons superiors perquè s'assemblin als botons d'Arbitrar / Catàleg / Registre.
+- QR i accessos (Principal): reforçada la funció de còpia d'enllaços i tokens.
+- QR i accessos (Principal): ara mostra un avís/confirmació quan la còpia s'ha fet correctament.

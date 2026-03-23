@@ -1,0 +1,19 @@
+FaltesMN (CAT) - Revisió v3
+
+Canvis principals aplicats:
+- Botó de sortida a la pantalla principal al perfil Administrador.
+- Retoc visual general: fons groc suau i botons verds.
+- Millores de textos i presentació al perfil d'Àrbitre principal.
+- Nou botó/finestreta per tornar a veure QR i accessos des del panell de l'Àrbitre principal.
+- Panell de Taula i Principal reorganitzat en dues zones: Control Competició i Arbitratge.
+- Taula i Principal ara tenen també Catàleg i Registre, no només Arbitrar per veu.
+- Entrades, Estat i PDF per àrbitre amb presentació en columnes fixes.
+- Dorsals ordenats prioritzant vermelles pendents i grogues/penalitzacions pendents.
+- Suport per marcar com a efectiva una expulsió vermella des del panell de Dorsals.
+- Millora del matching de veu/text per trobar faltes.
+- Selecció de veu TTS preferent en català o castellà si el navegador/sistema la tenen disponible.
+- Afegides capçaleres d'aïllament (COOP/COEP) a la configuració Vite per ajudar el funcionament del motor local al navegador.
+
+Punts a tenir presents:
+- La qualitat de la veu parlada depèn de les veus instal·lades al navegador/sistema operatiu.
+- El reconeixement local per navegador encara pot variar segons el navegador, el micròfon i l'entorn Linux.

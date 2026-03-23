@@ -1,0 +1,15 @@
+Versió v4.3 - ajustos de proves
+
+Canvis principals:
+1. Pantalla ESTAT: ara s'actualitza també quan entren nous àrbitres, sense haver de prémer Refresca.
+2. Separació del check de banner ('vist') respecte del check d'ENTRADES.
+   - El banner usa un estat propi d'avís vist.
+   - ENTRADES continua servint per ratllar/desratllar la falta.
+   - El PDF GLOBAL continua reflectint només el check d'ENTRADES.
+3. Modal de QR: afegit banner vermell d'avís Chrome Android / Safari iOS.
+4. Botó INF. afegit a la pantalla inicial i a les pantalles principals de treball/accés.
+5. Exportació JSON local ampliada amb els avisos marcats com a vistos.
+
+Nota sobre Firefox / Opera:
+- No s'ha forçat cap bloqueig.
+- Poden arribar a funcionar per accés manual o per enllaç, però la compatibilitat més fiable continua sent Chrome a Android i Safari a iOS, especialment per micròfon, PWA i Wake Lock.

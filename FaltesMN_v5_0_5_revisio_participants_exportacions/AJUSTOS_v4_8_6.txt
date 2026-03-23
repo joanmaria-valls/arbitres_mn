@@ -1,0 +1,18 @@
+Versió 4_8_6
+
+Canvis principals:
+- Botó "Targeta verda / auxili" en verd també a "Arbitrar per veu".
+- Columna "Ret" del formulari de Participants amb check lila quan està marcat.
+- Caselles de Penalització i Bonificació bloquejades per edició; només mostren el valor derivat dels àrbitres.
+- Ajust del formulari de Participants perquè no es perdi text mentre s'escriu el nom si coincideix amb un desat en curs.
+- Lleu retoc d'amplades del formulari per facilitar veure la columna de Temps net.
+- Símbols de gènere dels botons de classificació reduïts de mida.
+- Botons d'Exportacions uniformats d'alçada; 5 files fixes per columna. A les columnes amb 4 botons queda el darrer espai buit.
+- A la darrera columna: VETERÀ D MASCULÍ, VETERÀ D FEMENÍ, EXPULSATS, RETIRATS i NO PRESENTATS.
+- Botó "PDF àrbitres" canviat de comportament: genera un PDF separat per a cada àrbitre de recorregut.
+- En generar un PDF, es descarrega i alhora s'intenta obrir/previsualitzar en una pestanya/finestra nova.
+
+Comprovacions:
+- Sintaxi del servidor verificada amb node --check.
+- Sintaxi del client verificada amb esbuild sobre Dashboard.tsx i pdf.ts.
+- La compilació completa del client amb tsc/vite no s'ha pogut validar en aquest entorn perquè falten definicions de tipus de Vite/Node.

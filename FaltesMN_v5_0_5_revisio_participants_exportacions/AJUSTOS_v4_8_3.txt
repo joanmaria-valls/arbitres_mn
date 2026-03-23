@@ -1,0 +1,21 @@
+Versió 4_8_3
+
+Correccions aplicades respecte de la 4_8_2:
+
+1) Formulari Participants
+- Corregit el desat del camp «Temps brut», que podia no quedar fixat en sortir del camp.
+- Corregit el desat de «Gènere» i «Categoria», que podien no persistir correctament.
+- Ajustat el mecanisme intern de sincronització per evitar que el desat llegís una versió antiga de la fila acabada d'editar.
+
+2) Classificacions
+- En quedar ben desats gènere i categoria, els filtres de classificació per GENERAL masculina/femenina/no binària i per categories amb gènere han de funcionar correctament.
+
+3) Botons d'exportació
+- Augmentada una mica més la mida dels símbols masculí i femení als botons dels llistats.
+
+4) Empaquetat
+- El ZIP torna a portar una carpeta arrel amb nom de versió, no «work_v480fix».
+
+Nota de comprovació:
+- He verificat la coherència dels canvis al codi i la sintaxi del servidor.
+- En aquest entorn no he pogut fer una compilació completa del client perquè hi falten definicions de tipus de dependències de desenvolupament (per exemple «vite/client» i «node»).

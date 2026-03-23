@@ -1,0 +1,9 @@
+Ajustos v4.5
+
+- Capçalera del Dashboard reorganitzada per a mòbil Android:
+  - la franja d'estat (ONLINE, Pendents, Pantalla desperta) ja no hauria de sobreposar-se al títol
+  - en pantalles estretes baixa a la línia següent
+- Línia d'informació de competició simplificada:
+  - només mostra el nom de la competició i el nom de l'àrbitre
+  - ja no mostra el codi ni el rol en aquesta línia
+- La mateixa capçalera s'aplica a Arbitrar, Catàleg i Registre perquè el Dashboard comparteix encapçalament.

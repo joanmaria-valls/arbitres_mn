@@ -1,0 +1,8 @@
+FaltesMN v5.0.3
+
+Retocs urgents post-demo:
+- Recuperada la lectura en veu alta de les faltes amb reintent curt per a navegadors mòbils.
+- Quan hi ha diverses coincidències per veu, també ho anuncia en veu alta.
+- Catàleg: reforçada la selecció tàctil/manual de faltes en mòbil (click + touch) perquè obri directament el modal d'assignació.
+- Avisos de groga i vermella molt més aguts i forts.
+- Els avisos de groga/vermella es repeteixen fins que es marquen com a "Vist".

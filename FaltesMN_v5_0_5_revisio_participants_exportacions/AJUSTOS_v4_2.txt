@@ -1,0 +1,11 @@
+Ajustos v4.2
+
+- Corregit el desajust de la capçalera del perfil d'àrbitre de recorregut al mòbil.
+- Afegit el botó "Targeta verda / auxili" també dins de la pestanya Catàleg, després de Conducta.
+- Corregit el camp de temps de la targeta verda perquè funcioni amb 4 xifres mmss i mantingui el símbol ":" fix.
+  Exemple: 0125 = 01:25 i 1225 = 12:25.
+- Millorat el reconeixement per veu de "verda" / "verd" / "verde" / variants properes i "auxili".
+- Evitats els missatges grocs repetits quan no es troba cap falta per veu.
+
+Nota:
+La comprovació de compilació del client s'ha fet correctament. La resposta exacta del reconeixement de veu pot variar una mica segons el navegador i el micròfon del dispositiu.

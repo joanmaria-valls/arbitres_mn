@@ -1,0 +1,7 @@
+Ajustos v4.6
+
+- Afegit un guió llarg entre el nom de la competició i el nom de l'àrbitre a l'encapçalament.
+- Botons "Inf.", "Refresca" i "Sortir" homogenitzats en mida i separació, amb aspecte coherent amb la resta de botons.
+- "Inf." ara es mostra amb aquesta grafia exacta.
+- L'indicador de "Pantalla desperta" / estat Wake Lock es mostra també a Catàleg i Registre del perfil d'àrbitre de recorregut, no només a Arbitrar.
+- Retoc de l'encapçalament perquè mantingui millor la lectura tant en mòbil Android com en PC.

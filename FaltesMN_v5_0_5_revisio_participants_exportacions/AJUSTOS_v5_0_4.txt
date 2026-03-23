@@ -1,0 +1,10 @@
+FaltesMN v5.0.4
+
+Canvis principals:
+- Participants en finestra modal ampla per veure moltes més files.
+- Botó vermell X per esborrar una fila de participant, amb confirmació.
+- Exportacions: si no hi ha dades per al llistat, ja no obre la pregunta de veure/gravar; mostra directament l'avís.
+- Sons nous d'avís per a grogues i vermelles, amb fitxers MP3 en bucle fins marcar "Vist".
+- Millora de lectura en veu alta: preparació de speech synthesis i reintents més robustos.
+- VOSK/Firefox: el permís de micròfon es demana abans de carregar el model.
+- Benvinguda i pantalles similars una mica més compactes per ajustar millor en mòbils.

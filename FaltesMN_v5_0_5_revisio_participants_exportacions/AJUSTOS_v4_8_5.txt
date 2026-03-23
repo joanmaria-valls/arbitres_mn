@@ -1,0 +1,25 @@
+FaltesMN v4_8_5
+
+Ajustos principals respecte de la 4_8_4:
+
+1) Abandó (ABD)
+- corregit el flux perquè l'ABD no es tracti com una targeta verda / auxili
+- banner lila independent a Taula/Principal
+- a Entrades i a l'historial per dorsal ara ha de sortir ABD amb color lila i text d'abandó
+- la detecció interna de retirat ara reconeix correctament ABD per als llistats
+
+2) Participants
+- ajustada la graella perquè els checks NP/Ret quedin més junts i es desplacin una mica les columnes cap a l'esquerra
+- això hauria d'ajudar a veure millor la columna de Temps net
+
+3) Classificacions / PDFs
+- els títols dels PDFs ja no fan servir símbols de gènere al nom del llistat
+- ara han de sortir amb text: MASCULÍ, FEMENÍ o NO BINARI
+- es manté l'ús de símbols només als botons, per estalviar espai
+
+4) Admin plataforma
+- suprimit l'enllaç/QR del principal a la pantalla de creació de la clau del principal
+- ara només es dona la clau, i els accessos/QR es generen quan ja hi ha una competició creada
+
+5) Llistats
+- els filtres i seccions continuen preparats perquè als PDFs només hi surtin dorsals amb nom i alguna situació real de cursa (temps, retirat, expulsat o no presentat)

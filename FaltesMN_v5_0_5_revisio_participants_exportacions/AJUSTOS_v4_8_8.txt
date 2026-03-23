@@ -1,0 +1,32 @@
+AJUSTOS v4.8.8 (Fase A - persistència i exportacions)
+
+1) Exportacions:
+- Els llistats PDF s'obren primer només en pantalla.
+- Després l'app pregunta si també es volen gravar al dispositiu.
+- S'afegeix el botó vermell "GRAVAR TOTS ELS LLISTATS" per desar de cop:
+  * PDF per àrbitre
+  * PDF global
+  * PDF per dorsals
+  * totes les classificacions disponibles
+  * expulsats / retirats / no presentats
+
+2) Persistència i seguretat:
+- Les sessions de principal i actors deixen d'estar només en memòria i passen a persistir-se al fitxer de dades.
+- El servidor crea còpies de seguretat rodants a server/backups.
+- El servidor guarda un registre d'operacions a server/logs en format NDJSON.
+- S'afegeixen scripts:
+  * server/llista-backups.sh
+  * server/restaura-backup.sh
+- Endpoint de salut: GET /api/health
+
+3) Cua offline ampliada al client:
+- A més de noves faltes, també es posen en cua local si no hi ha connexió:
+  * checks
+  * avisos vistos
+  * penalitzacions complertes
+  * modificacions de participants
+- Quan torna la connexió, l'app ho reenvia automàticament.
+- Els checks/acks/penalitzacions/participants fan servir claus estables a la cua per evitar duplicats innecessaris.
+
+Nota:
+Aquesta versió millora força la robustesa, però NO substitueix encara una base de dades real de servidor. És una primera Fase A pensada perquè la mateixa app sigui més segura en local i prepari millor el pas a un servidor extern.

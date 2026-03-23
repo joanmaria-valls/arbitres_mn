@@ -1,0 +1,25 @@
+FaltesMN v4_8_4
+================
+
+Canvis principals:
+- correcció del desat del formulari de Participants (nom, gènere, categoria i temps)
+- nova columna NP (no presentat) al formulari de Participants
+- nova columna Ret (retirat) al formulari de Participants, marcada automàticament si arriba un abandó
+- botó lila "Abandona" a Arbitrar i a Catàleg
+- banner lila a Taula/Principal quan arriba un abandó
+- els PDF de classificació ara separen:
+  1) participants classificats
+  2) participants retirats
+  3) participants no presentats
+- botó nou "Retirats" a Exportacions
+- el botó "No presentats" queda partit en dos mig botons: No presentats / Retirats
+- recuperada una exportació de faltes per àrbitres: "PDF àrbitres"
+- simplificació visual d'Exportacions:
+  - només queden els grans encapçalaments negres ARBITRATGE i CLASSIFICACIONS
+  - eliminats els títols repetits dins de cada columna
+- símbols de gènere masculí/femení una mica més grossos
+
+Observacions:
+- el "retirat" es determina a partir d'un esdeveniment d'abandó enviat per un àrbitre
+- el check "Ret" del formulari és només indicatiu/automàtic (no editable manualment)
+- el check "NP" sí que és editable des de Taula/Principal

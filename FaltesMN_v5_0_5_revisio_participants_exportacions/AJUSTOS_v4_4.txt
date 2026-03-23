@@ -1,0 +1,5 @@
+AJUSTOS v4.4
+
+- Capçalera del Dashboard ajustada perquè nom de competició, codi i àrbitre surtin de costat també al mòbil, amb desplaçament horitzontal si cal.
+- Finestra de QR del Principal compactada: QR més petits i enllaços en una sola línia desplaçable perquè hi càpiguen també els botons inferiors al PC.
+- PDF GLOBAL: la marca de control ara surt com una X més visible, en lloc d'un check petit.

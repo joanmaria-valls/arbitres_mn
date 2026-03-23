@@ -1,0 +1,5 @@
+Ajustos v4.7.1
+- Encapçalament de Principal i Taula al PC: estats i botons a la franja superior, a la dreta.
+- Encapçalament de Recorregut al PC: ONLINE/Pendents/Pantalla desperta a la franja superior dreta.
+- Botons Inf./Refresca/Sortir de Recorregut amb mida homogènia.
+- Pantalla desperta visible també a Principal i Taula mentre la competició és oberta.
