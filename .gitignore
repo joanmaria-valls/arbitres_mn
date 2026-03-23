@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+
+# Distribution folder
+/dist/
+
+# Environment variables
+.env
+
+# Database files
+*.db
+
+# Sensitive files
+*.pem
+*.key
+*.log
